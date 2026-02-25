@@ -145,25 +145,25 @@ namespace ProjetoLoja2dsA.Controllers
             // APAGA TUDO QUE ESTÁ NA SESSION
             HttpContext.Session.Clear();
 
-            // VOLTA PARA A PÁGINA INICIAL
+           
             return RedirectToAction("Index", "Home");
         }
 
 
         public IActionResult Perfil()
         {
-            // pega os dados da sessão
+           
             var nome = HttpContext.Session.GetString("NomeUsuario");
             var email = HttpContext.Session.GetString("EmailUsuario");
             var foto = HttpContext.Session.GetString("AvatarUrl") ?? "/pastafotos/avatar-default.png";
 
-            // se não tiver nome na sessão, não está logado → manda pro login
+           
             if (string.IsNullOrEmpty(nome))
             {
                 return RedirectToAction("Login");
             }
 
-            // passa os dados para a view via ViewBag (simples, sem criar model novo)
+          
             ViewBag.Nome = nome;
             ViewBag.Email = email;
             ViewBag.Foto = foto;
