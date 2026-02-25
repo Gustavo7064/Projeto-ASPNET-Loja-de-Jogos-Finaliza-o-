@@ -11,7 +11,7 @@ namespace ProjetoLoja2dsA.Controllers
 
         public ProdutoController(ProdutoRepositorio produtoRepositorio)
         {
-            // O CONSTRUTOR É CHAMADO QUANDO UMA NOVA INSTANCIA É CRIADA
+            
             _produtoRepositorio = produtoRepositorio;
         }
 
